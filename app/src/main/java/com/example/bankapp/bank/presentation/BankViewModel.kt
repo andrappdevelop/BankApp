@@ -6,17 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.bankapp.R
 import com.example.bankapp.bank.domain.BankInteractor
-import com.example.bankapp.bank.domain.BankResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class BankViewModel(
-    private val dispatchers: DispatchersList,
+    private val handleResult: HandleBankRequest,
     private val manageResources: ManageResources,
     private val communications: BankCommunication,
-    private val interactor: BankInteractor,
-    private val bankResultMapper: BankResult.Mapper<Unit>
+    private val interactor: BankInteractor
 ) : FetchBin, ObserveBank, ViewModel() {
 
     override fun observeProgress(owner: LifecycleOwner, observer: Observer<Boolean>) =
@@ -30,11 +27,8 @@ class BankViewModel(
 
     override fun init(isFirstRun: Boolean) {
         if (isFirstRun) {
-            communications.showProgress(true)
-            viewModelScope.launch(dispatchers.io()) {
-                val result = interactor.init()
-                communications.showProgress(false)
-                result.map(bankResultMapper)
+            handleResult.handle(viewModelScope) {
+                interactor.init()
             }
         }
     }
@@ -45,11 +39,8 @@ class BankViewModel(
                 UiState.Error(manageResources.string(R.string.empty_number_error_message))
             )
         } else {
-            communications.showProgress(true)
-            viewModelScope.launch(dispatchers.io()) {
-                val result = interactor.fetch(number)
-                communications.showProgress(false)
-                result.map(bankResultMapper)
+            handleResult.handle(viewModelScope) {
+                interactor.fetch(number)
             }
         }
     }
