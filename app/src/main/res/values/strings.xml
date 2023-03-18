@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">BankApp</string>
+    <string name="search">Search</string>
+    <string name="lunh">lunh</string>
+    <string name="length">length</string>
+    <string name="number">Number</string>
+    <string name="prepaid">Prepaid</string>
+    <string name="brand">Brand</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="scheme">Scheme</string>
+    <string name="type">Type</string>
+    <string name="country">Country</string>
+    <string name="bank">Bank</string>
 </resources>

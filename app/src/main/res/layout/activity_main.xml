@@ -1,18 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".presentation.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5">
+
+        <TextView
+            android:id="@+id/bankTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/bank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bankNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/bankTextView"
+            app:layout_constraintStart_toStartOf="@id/bankTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankTextView" />
+
+        <TextView
+            android:id="@+id/bankUrlTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/bankNameTextView"
+            app:layout_constraintStart_toStartOf="@id/bankNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankNameTextView" />
+
+        <TextView
+            android:id="@+id/bankPhoneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/bankUrlTextView"
+            app:layout_constraintStart_toStartOf="@id/bankUrlTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankUrlTextView" />
+
+        <TextView
+            android:id="@+id/bankCityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/bankPhoneTextView"
+            app:layout_constraintStart_toStartOf="@id/bankPhoneTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankPhoneTextView" />
+
+        <TextView
+            android:id="@+id/countryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/country"
+            app:layout_constraintEnd_toEndOf="@id/bankCityTextView"
+            app:layout_constraintStart_toStartOf="@id/bankCityTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankCityTextView" />
+
+        <TextView
+            android:id="@+id/bankCountryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/countryTextView"
+            app:layout_constraintStart_toStartOf="@id/countryTextView"
+            app:layout_constraintTop_toBottomOf="@id/countryTextView" />
+
+        <TextView
+            android:id="@+id/typeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            app:layout_constraintBottom_toBottomOf="@id/countryTextView"
+            app:layout_constraintEnd_toStartOf="@id/countryTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/countryTextView" />
+
+        <TextView
+            android:id="@+id/bankTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/typeTextView"
+            app:layout_constraintStart_toStartOf="@id/typeTextView"
+            app:layout_constraintTop_toBottomOf="@id/typeTextView" />
+
+        <TextView
+            android:id="@+id/schemeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scheme"
+            app:layout_constraintBottom_toBottomOf="@id/countryTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/countryTextView"
+            app:layout_constraintTop_toTopOf="@id/countryTextView" />
+
+        <TextView
+            android:id="@+id/bankSchemeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/schemeTextView"
+            app:layout_constraintStart_toStartOf="@id/schemeTextView"
+            app:layout_constraintTop_toBottomOf="@id/schemeTextView" />
+
+        <TextView
+            android:id="@+id/coordinatesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/coordinates"
+            app:layout_constraintEnd_toEndOf="@id/bankCountryTextView"
+            app:layout_constraintStart_toStartOf="@id/bankCountryTextView"
+            app:layout_constraintTop_toBottomOf="@id/bankCountryTextView" />
+
+        <TextView
+            android:id="@+id/bankCoordinatesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/coordinatesTextView"
+            app:layout_constraintStart_toStartOf="@id/coordinatesTextView"
+            app:layout_constraintTop_toBottomOf="@id/coordinatesTextView" />
+
+        <TextView
+            android:id="@+id/brandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/brand"
+            app:layout_constraintEnd_toEndOf="@id/typeTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bankCoordinatesTextView" />
+
+        <TextView
+            android:id="@+id/bankBrandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/brandTextView"
+            app:layout_constraintStart_toStartOf="@id/brandTextView"
+            app:layout_constraintTop_toBottomOf="@id/brandTextView" />
+
+        <TextView
+            android:id="@+id/prepaidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prepaid"
+            app:layout_constraintBottom_toBottomOf="@+id/brandTextView"
+            app:layout_constraintEnd_toStartOf="@id/numberTextView"
+            app:layout_constraintStart_toEndOf="@id/brandTextView"
+            app:layout_constraintTop_toTopOf="@id/brandTextView" />
+
+        <TextView
+            android:id="@+id/bankPrepaidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/prepaidTextView"
+            app:layout_constraintStart_toStartOf="@id/prepaidTextView"
+            app:layout_constraintTop_toBottomOf="@id/prepaidTextView" />
+
+        <TextView
+            android:id="@+id/numberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number"
+            app:layout_constraintBottom_toBottomOf="@+id/brandTextView"
+            app:layout_constraintEnd_toEndOf="@id/schemeTextView"
+            app:layout_constraintStart_toStartOf="@id/schemeTextView"
+            app:layout_constraintTop_toTopOf="@id/brandTextView" />
+
+        <TextView
+            android:id="@+id/lengthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/length"
+            app:layout_constraintEnd_toStartOf="@id/numberTextView"
+            app:layout_constraintStart_toStartOf="@id/numberTextView"
+            app:layout_constraintTop_toBottomOf="@id/numberTextView" />
+
+        <TextView
+            android:id="@+id/bankLengthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/lengthTextView"
+            app:layout_constraintStart_toStartOf="@id/lengthTextView"
+            app:layout_constraintTop_toBottomOf="@id/lengthTextView" />
+
+        <TextView
+            android:id="@+id/lunhTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/lunh"
+            app:layout_constraintEnd_toEndOf="@id/numberTextView"
+            app:layout_constraintStart_toEndOf="@id/numberTextView"
+            app:layout_constraintTop_toBottomOf="@id/numberTextView" />
+
+        <TextView
+            android:id="@+id/bankLunhTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/lunhTextView"
+            app:layout_constraintStart_toStartOf="@id/lunhTextView"
+            app:layout_constraintTop_toBottomOf="@id/lunhTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="8" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/bin_item" />
+
+</LinearLayout>
