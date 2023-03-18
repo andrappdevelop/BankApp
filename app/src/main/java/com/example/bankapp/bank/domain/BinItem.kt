@@ -1,12 +1,15 @@
 package com.example.bankapp.bank.domain
 
+import com.example.bankapp.bank.data.BinCloud
+
 data class BinItem(
-    private val binNumber: String
+    private val number: String,
+    private val info: BinCloud
 ) {
 
     interface Mapper<T> {
-        fun map(binNumber: String): T
+        fun map(number: String, info: BinCloud): T
     }
 
-    fun <T> map(mapper: Mapper<T>): T = mapper.map(binNumber)
+    fun <T> map(mapper: Mapper<T>): T = mapper.map(number, info)
 }
