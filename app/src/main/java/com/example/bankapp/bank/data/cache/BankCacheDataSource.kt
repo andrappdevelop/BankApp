@@ -1,4 +1,6 @@
-package com.example.bankapp.bank.data
+package com.example.bankapp.bank.data.cache
+
+import com.example.bankapp.bank.data.BankData
 
 interface BankCacheDataSource {
 

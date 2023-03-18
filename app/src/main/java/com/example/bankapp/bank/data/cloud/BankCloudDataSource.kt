@@ -1,4 +1,6 @@
-package com.example.bankapp.bank.data
+package com.example.bankapp.bank.data.cloud
+
+import com.example.bankapp.bank.data.BankData
 
 interface BankCloudDataSource {
 

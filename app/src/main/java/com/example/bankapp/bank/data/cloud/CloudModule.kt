@@ -1,4 +1,4 @@
-package com.example.bankapp.bank.data
+package com.example.bankapp.bank.data.cloud
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
