@@ -12,4 +12,6 @@
     <string name="country">Country</string>
     <string name="bank">Bank</string>
     <string name="empty_number_error_message">Please enter a BIN number</string>
+    <string name="no_connection_message">No internet connection</string>
+    <string name="service_is_unavailable">Service is unavailable</string>
 </resources>
