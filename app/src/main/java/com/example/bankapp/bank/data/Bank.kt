@@ -1,4 +1,4 @@
-package com.example.bankapp.bank.domain
+package com.example.bankapp.bank.data
 
 data class Bank(
     private val name: String = "",

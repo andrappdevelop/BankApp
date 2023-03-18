@@ -8,7 +8,7 @@ interface BankInteractor {
 
     class Base(
         private val repository: BankRepository,
-        private val handleError: HandleError
+        private val handleError: HandleError<String>
     ) : BankInteractor {
 
         override suspend fun init(): BankResult = BankResult.Success(repository.allBins())
