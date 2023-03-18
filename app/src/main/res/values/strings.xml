@@ -11,4 +11,5 @@
     <string name="type">Type</string>
     <string name="country">Country</string>
     <string name="bank">Bank</string>
+    <string name="empty_number_error_message">Please enter a BIN number</string>
 </resources>

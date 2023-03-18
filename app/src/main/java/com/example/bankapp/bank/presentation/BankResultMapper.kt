@@ -10,9 +10,8 @@ class BankResultMapper(
 
     override fun map(list: List<BinItem>, errorMessage: String) = communications.showState(
         if (errorMessage.isEmpty()) {
-            val bankList = list.map { it.map(mapper) }
-            if (bankList.isNotEmpty())
-                communications.showList(bankList)
+            if (list.isNotEmpty())
+                communications.showList(list.map { it.map(mapper) })
             UiState.Success()
         } else
             UiState.Error(errorMessage)
