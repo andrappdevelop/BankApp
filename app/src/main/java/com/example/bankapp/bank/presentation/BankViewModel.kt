@@ -14,9 +14,9 @@ class BankViewModel(
     private val manageResources: ManageResources,
     private val communications: BankCommunication,
     private val interactor: BankInteractor
-) : FetchBin, ObserveBank, ViewModel() {
+) : FetchBin, ObserveBank, ViewModel(), ClearError {
 
-    override fun observeProgress(owner: LifecycleOwner, observer: Observer<Boolean>) =
+    override fun observeProgress(owner: LifecycleOwner, observer: Observer<Int>) =
         communications.observeProgress(owner, observer)
 
     override fun observeState(owner: LifecycleOwner, observer: Observer<UiState>) =
@@ -36,7 +36,7 @@ class BankViewModel(
     override fun fetch(number: String) {
         if (number.isEmpty()) {
             communications.showState(
-                UiState.Error(manageResources.string(R.string.empty_number_error_message))
+                UiState.ShowError(manageResources.string(R.string.empty_number_error_message))
             )
         } else {
             handleResult.handle(viewModelScope) {
@@ -44,6 +44,8 @@ class BankViewModel(
             }
         }
     }
+
+    override fun clearError() = communications.showState(UiState.ClearError())
 }
 
 interface FetchBin {
@@ -63,4 +65,8 @@ interface DispatchersList {
         override fun io(): CoroutineDispatcher = Dispatchers.IO
         override fun ui(): CoroutineDispatcher = Dispatchers.Main
     }
+}
+
+interface ClearError {
+    fun clearError()
 }

@@ -1,5 +1,6 @@
 package com.example.bankapp.bank.presentation
 
+import android.view.View
 import androidx.lifecycle.viewModelScope
 import com.example.bankapp.bank.domain.BankResult
 import kotlinx.coroutines.CoroutineScope
@@ -18,10 +19,10 @@ interface HandleBankRequest {
         private val bankResultMapper: BankResult.Mapper<Unit>
     ) : HandleBankRequest {
         override fun handle(coroutineScope: CoroutineScope, block: suspend () -> BankResult) {
-            communications.showProgress(true)
+            communications.showProgress(View.VISIBLE)
             coroutineScope.launch(dispatchers.io()) {
                 val result = block.invoke()
-                communications.showProgress(false)
+                communications.showProgress(View.GONE)
                 result.map(bankResultMapper)
             }
         }
