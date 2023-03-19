@@ -1,6 +1,8 @@
 package com.example.bankapp.bank.data
 
+import com.google.gson.annotations.SerializedName
+
 data class Number(
-    private val length: Int? = null,
-    private val luhn: Boolean = false
+    @SerializedName("length") val length: Int? = null,
+    @SerializedName("luhn") val luhn: Boolean = false
 )

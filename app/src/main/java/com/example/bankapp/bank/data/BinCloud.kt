@@ -1,11 +1,13 @@
 package com.example.bankapp.bank.data
 
+import com.google.gson.annotations.SerializedName
+
 data class BinCloud(
-    private val number: Number = Number(),
-    private val scheme: String = "",
-    private val type: String = "",
-    private val brand: String = "",
-    private val prepaid: Boolean = false,
-    private val country: Country = Country(),
-    private val bank: Bank = Bank()
+    @SerializedName("number") val number: Number = Number(),
+    @SerializedName("scheme") val scheme: String = "",
+    @SerializedName("type") val type: String = "",
+    @SerializedName("brand") val brand: String = "",
+    @SerializedName("prepaid") val prepaid: Boolean = false,
+    @SerializedName("country") val country: Country = Country(),
+    @SerializedName("bank") val bank: Bank = Bank()
 )

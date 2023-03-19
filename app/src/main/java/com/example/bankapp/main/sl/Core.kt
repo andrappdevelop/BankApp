@@ -1,7 +1,6 @@
 package com.example.bankapp.main.sl
 
 import android.content.Context
-import com.example.bankapp.bank.data.cache.BankDatabase
 import com.example.bankapp.bank.data.cache.CacheModule
 import com.example.bankapp.bank.data.cloud.CloudModule
 import com.example.bankapp.bank.presentation.DispatchersList

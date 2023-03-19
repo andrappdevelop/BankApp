@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bankapp.R
@@ -45,7 +44,7 @@ class BankFragment : Fragment() {
         val inputEditText = view.findViewById<TextInputEditText>(R.id.inputEditText)
         val adapter = BankAdapter(object : ClickListener {
             override fun click(item: BankUi) {
-                inputEditText.setText(item.ui())
+                inputEditText.setText(item.uiNumber())
             }
         })
 

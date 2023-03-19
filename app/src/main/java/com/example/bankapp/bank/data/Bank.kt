@@ -1,8 +1,10 @@
 package com.example.bankapp.bank.data
 
+import com.google.gson.annotations.SerializedName
+
 data class Bank(
-    private val name: String = "",
-    private val url: String = "",
-    private val phone: String = "",
-    private val city: String = ""
+    @SerializedName("name") val name: String = "",
+    @SerializedName("url") val url: String = "",
+    @SerializedName("phone") val phone: String = "",
+    @SerializedName("city") val city: String = ""
 )

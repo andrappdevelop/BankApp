@@ -39,15 +39,16 @@ class BankViewHolder(
     private val clickListener: ClickListener
 ) : RecyclerView.ViewHolder(view) {
 
-    private val number = itemView.findViewById<TextView>(R.id.binItemTextView)
+    private val title = itemView.findViewById<TextView>(R.id.binItemNumberTextView)
+    private val subtitle = itemView.findViewById<TextView>(R.id.binItemInfoTextView)
+    private val mapper = ListItemUi(title, subtitle)
 
     fun bind(model: BankUi) {
-        model.map(number)
+        model.map(mapper)
         itemView.setOnClickListener { clickListener.click(model) }
     }
 
 }
-
 
 interface ClickListener {
     fun click(item: BankUi)

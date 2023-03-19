@@ -53,3 +53,5 @@ interface BankStateCommunication : Communication.Mutable<UiState> {
 interface BankListCommunication : Communication.Mutable<List<BankUi>> {
     class Base() : Communication.Post<List<BankUi>>(), BankListCommunication
 }
+
+

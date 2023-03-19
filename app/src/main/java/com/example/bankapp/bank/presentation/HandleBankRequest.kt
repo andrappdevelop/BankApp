@@ -1,7 +1,6 @@
 package com.example.bankapp.bank.presentation
 
 import android.view.View
-import androidx.lifecycle.viewModelScope
 import com.example.bankapp.bank.domain.BankResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

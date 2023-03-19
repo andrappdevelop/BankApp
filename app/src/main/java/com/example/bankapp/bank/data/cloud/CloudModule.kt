@@ -10,8 +10,8 @@ interface CloudModule {
     class Base() : CloudModule {
         override fun <T> service(clazz: Class<T>): T {
             val retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(BASE_URL)
                 .build()
             return retrofit.create(clazz)
         }

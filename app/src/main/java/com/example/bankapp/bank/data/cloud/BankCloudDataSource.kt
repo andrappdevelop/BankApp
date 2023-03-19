@@ -9,8 +9,8 @@ interface BankCloudDataSource : FetchBank {
         private val service: BankService
     ) : BankCloudDataSource {
         override suspend fun fetch(number: String): BankData {
-            val binInfo = service.binInfo(number)
-            return BankData(number/*, binInfo*/)
+            val binInfo = service.binInfo(number).toString()
+            return BankData(number, binInfo)
         }
     }
 }

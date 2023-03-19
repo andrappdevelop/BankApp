@@ -9,7 +9,6 @@ import com.example.bankapp.bank.data.cache.BankDataToCache
 import com.example.bankapp.bank.data.cloud.BankCloudDataSource
 import com.example.bankapp.bank.data.cloud.BankService
 import com.example.bankapp.bank.domain.BankInteractor
-import com.example.bankapp.bank.domain.BankRepository
 import com.example.bankapp.bank.domain.BankUiMapper
 import com.example.bankapp.bank.domain.HandleError
 import com.example.bankapp.bank.presentation.*

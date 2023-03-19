@@ -1,11 +1,13 @@
 package com.example.bankapp.bank.data
 
+import com.google.gson.annotations.SerializedName
+
 data class Country(
-    private val numeric: String = "",
-    private val alpha2: String = "",
-    private val name: String = "",
-    private val emoji: String = "",
-    private val currency: String = "",
-    private val latitude: Int? = null,
-    private val longitude: Int? = null
+    @SerializedName("numeric") val numeric: String = "",
+    @SerializedName("alpha2") val alpha2: String = "",
+    @SerializedName("name") val name: String = "",
+    @SerializedName("emoji") val emoji: String = "",
+    @SerializedName("currency") val currency: String = "",
+    @SerializedName("latitude") val latitude: Int? = null,
+    @SerializedName("longitude") val longitude: Int? = null
 )

@@ -1,7 +1,6 @@
 package com.example.bankapp.bank.data.cache
 
 import com.example.bankapp.bank.data.BankData
-import com.example.bankapp.bank.data.BinCloud
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
@@ -13,7 +12,6 @@ interface BankCacheDataSource : FetchBank {
 
     suspend fun saveFetch(bankData: BankData)
 
-
     class Base(
         private val dao: BankDao, private val dataToCache: BankData.Mapper<BankCache>
     ) : BankCacheDataSource {
@@ -22,7 +20,7 @@ interface BankCacheDataSource : FetchBank {
 
         override suspend fun allBins(): List<BankData> = mutex.withLock {
             val data = dao.allBins()
-            return data.map { BankData(it.number/*, it.binInfo*/) }
+            return data.map { BankData(it.number, it.binInfo) }
         }
 
         override suspend fun contains(number: String): Boolean = mutex.withLock {
@@ -31,8 +29,8 @@ interface BankCacheDataSource : FetchBank {
         }
 
         override suspend fun fetch(number: String): BankData = mutex.withLock {
-            val bankCache = dao.fetch(number)!!
-            return BankData(bankCache.number/*, bankCache.binInfo*/)
+            val bankCache = dao.fetch(number) ?: BankCache("", "", 0)
+            return BankData(bankCache.number, bankCache.binInfo)
         }
 
         override suspend fun saveFetch(bankData: BankData) = mutex.withLock {

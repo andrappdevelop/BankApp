@@ -11,7 +11,7 @@ interface CacheModule {
 
         private val database by lazy {
             return@lazy Room.databaseBuilder(
-                context.applicationContext,
+                context,
                 BankDatabase::class.java,
                 "bank_database"
             )

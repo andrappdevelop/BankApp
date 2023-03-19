@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface BankDao {
 
-    @Query("SELECT * FROM bank_table ORDER BY date ASC")
+    @Query("SELECT * FROM bank_table ORDER BY date DESC")
     fun allBins(): List<BankCache>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
